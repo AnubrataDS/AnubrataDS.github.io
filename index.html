@@ -1,0 +1,118 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/indexanims.css">
+    <link rel="stylesheet" href="css/parallax.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.smoothstate/0.7.2/jquery.smoothState.min.js"></script>
+    <script src="js/smooth.js"></script>
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="m-scene" id="content">
+        <div id="initial" class="parallax-container">
+            <div class="parallax-layer layer-0" data-parallax-speed="0.1" data-max-scroll="999"></div>
+            <div class="scene_element scene_element--fadeinup parallax-layer layer-1" data-parallax-speed="0.2" data-max-scroll="999"></div>
+            <div class="scene_element scene_element--fadeinup parallax-layer layer-2" data-parallax-speed="0.4" data-max-scroll="999"></div>
+            <div class="scene_element scene_element--fadeinup parallax-layer layer-3" data-parallax-speed="0.6" data-max-scroll="999"></div>
+            <div class="scene_element scene_element--fadeinup parallax-layer layer-4" data-parallax-speed="0.8" data-max-scroll="999"></div>
+            <div class="scene_element scene_element--fadeinup parallax-layer layer-5" data-parallax-speed="1" data-max-scroll="999"></div>
+            <div class="initcontent parallax-layer layer-6" data-parallax-speed="0.7" data-max-scroll="999">
+                <div class=" scene_element scene_element--fadeinup header1">Hello there !</div>
+                <div class="scene_element scene_element--fadeinup header2">I am Anubrata.</div>
+                <div class="scene_element scene_element--fadeinup btncontain ">
+                    <div class="mainbtn1" id="scrollbtn">
+                        <div class="before-content">
+                            And this is my portfolio.
+                        </div>
+                        <div class="after-content">
+                            Dive in !
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lowercontent">
+            <div id="header"></div>
+            <div id="body">
+                <div id="bodycontainer">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 column">
+                            <div class="row card">
+                                <div>Hello</div>
+                            </div>
+                            <div class="row card">
+                                <div>Hello</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 column" </div>
+                            <div class="row card card2">
+                                <div>I design and develop websites</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 column" </div>
+                            <div class="row card">
+                                <div>Hello</div>
+                            </div>
+                            <div class="row card">
+                                <div>Hello</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 column">
+                            <div class="row card">
+                                <div>Hello</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 column">
+                            <div class="row card">
+                                <div>Hello</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('#scrollbtn').click(function() {
+            $('html, body').animate({
+                scrollTop: $('#header').offset().top
+            }, 1000);
+            return false;
+        });
+    </script>
+    <script type="text/javascript" src="js/loader.js"></script>
+    <script src="js/parallax.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. 
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>-->
+</body>
+
+</html>

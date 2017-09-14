@@ -1,0 +1,20 @@
+body {
+    background-color: #010f21;
+    /* background-image: url("http://www.dinpattern.com/tiles/luke-aztec.gif");
+    background-position: top;
+    background-attachment: fixed;*/
+}
+
+.full-width {
+    width: 100vw;
+}
+
+.row {
+    margin: 0px;
+    padding: 0px;
+}
+
+.column {
+    margin: 0px;
+    padding: 0px;
+}
