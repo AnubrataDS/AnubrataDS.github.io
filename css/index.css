@@ -89,12 +89,12 @@
 }
 
 .card {
-    height: 150px;
+    min-height: 150px;
     padding: 10px;
 }
 
 .card div {
-    background-color: #05080b;
+    background-color: #000a16;
     height: 100%;
     border-radius: 5px;
     padding: 30px;
@@ -105,4 +105,12 @@
 
 .card2 {
     height: 300px;
+}
+
+.spaced {
+    padding-top: 80px;
+}
+
+.cardheader {
+    background-color: #01132b;
 }

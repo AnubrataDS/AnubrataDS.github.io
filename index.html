@@ -58,37 +58,66 @@
             <div id="body">
                 <div id="bodycontainer">
                     <div class="row">
-                        <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 column">
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 column">
                             <div class="row card">
-                                <div>Hello</div>
-                            </div>
-                            <div class="row card">
-                                <div>Hello</div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 column" </div>
-                            <div class="row card card2">
-                                <div>I design and develop websites</div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 column" </div>
-                            <div class="row card">
-                                <div>Hello</div>
-                            </div>
-                            <div class="row card">
-                                <div>Hello</div>
+                                <div class="cardheader">Languages I know</div>
+                                <div class="languages">
+                                    <ul class="languageslist">
+                                        <li>JAVA : Proficient</li>
+                                        <li>C : Intermediate </li>
+                                        <li>C++ : Basic knowledge</li>
+                                        <li>Python : Beginner</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 column">
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 column">
                             <div class="row card">
-                                <div>Hello</div>
+                                <div class="cardheader">Tools and services I use</div>
+                                <div class="languages">
+                                    <ul class="languageslist">
+                                        <li>IDE : Eclipse , Android Studio , Code::Blocks</li>
+                                        <li>Cloud service : Firebase</li>
+                                        <li>VCS : Git</li>
+                                        <li>Logging and analytics : Keen.io</li>
+                                        <li>BaaS : Parse , firebase</li>
+                                        <li>PaaS : Heroku</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 column">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 column">
                             <div class="row card">
-                                <div>Hello</div>
+                                <div class="cardheader">I am interested in</div>
+                                <div class="languages">
+                                    <ul class="languageslist">
+                                        <li>Competitive programming</li>
+                                        <li>Website design</li>
+                                        <li>Web application development</li>
+                                        <li>Android application developement</li>
+                                        <li>Desktop application development</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 column">
+                            <div class="row card">
+                                <div class="cardheader">Projects I have worked on </div>
+                                <div class="languages">
+                                    <ul class="languageslist">
+                                        <li>Competitive programming</li>
+                                        <li>Website design</li>
+                                        <li>Web application development</li>
+                                        <li>Android application developement</li>
+                                        <li>Desktop application development</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -100,9 +129,19 @@
     <script>
         $('#scrollbtn').click(function() {
             $('html, body').animate({
-                scrollTop: $('#header').offset().top
+                scrollTop: $('#header').offset().top + 10
             }, 1000);
             return false;
+        });
+
+        $(window).scroll(function() {
+            if ($(window).scrollTop() >= $('#header').offset().top) {
+                $('.desktop-header').addClass('headerfixed');
+                $('#body').addClass('spaced');
+            } else {
+                $('.desktop-header').removeClass('headerfixed');
+                $('#body').removeClass('spaced');
+            }
         });
     </script>
     <script type="text/javascript" src="js/loader.js"></script>
