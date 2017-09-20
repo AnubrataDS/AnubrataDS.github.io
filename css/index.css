@@ -29,6 +29,10 @@
     position: relative;
 }
 
+.body {
+    padding-top: 15px;
+}
+
 .btncontain {
     margin-top: 20px;
     /*background-color: black;*/
@@ -86,21 +90,18 @@
 #bodycontainer {
     padding: 10px;
     border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .card {
-    min-height: 150px;
     padding: 10px;
 }
 
 .card div {
-    background-color: #000a16;
     height: 100%;
-    border-radius: 5px;
-    padding: 30px;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
 }
 
 .card2 {
@@ -112,5 +113,78 @@
 }
 
 .cardheader {
-    background-color: #01132b;
+    padding: 30px;
+    background-color: #001f44;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 1px solid #000a16;
+    font-size: 20px;
+}
+
+.languages {
+    background-color: #000a16;
+}
+
+.card ul {
+    list-style: none;
+    padding-left: 0px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.card ul li {
+    padding: 20px;
+    transition: 0.1s linear all;
+    background-color: #001630;
+    border-bottom: 1px solid #000a16;
+    border-top: 1px solid #000a16;
+    font-size: 15px;
+}
+
+.card ul li .flavor {
+    display: none;
+}
+
+.card ul li:hover {
+    background-color: #000a16;
+}
+
+.card ul li:hover .flavor {
+    display: block;
+}
+
+.card ul li:hover .head {
+    display: none;
+}
+
+.t90 {
+    width: 90%;
+}
+
+.t80 {
+    width: 80%;
+}
+
+.t70 {
+    width: 70%;
+}
+
+.t60 {
+    width: 60%;
+}
+
+.t50 {
+    width: 50%;
+}
+
+.t30 {
+    width: 30%;
+}
+
+.right {
+    right: 0px;
+    float: right;
+}
+
+#closebtn:hover {
+    color: white;
+    background-color: #001630;
 }
