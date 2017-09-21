@@ -1,6 +1,6 @@
 # AnubrataDS.github.io
 
-[Visit the page !](anubratads.github.io)
+[Visit the page !](https://anubratads.github.io)
 
 Hey everyone , this is my personal "portfolio" webpage , nothing too special but it has some pretty stuff like :
 * A sweet multi-layer parallaxed cityscape thing
