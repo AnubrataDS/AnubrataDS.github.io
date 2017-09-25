@@ -101,7 +101,7 @@
 .card div {
     height: 100%;
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", sans-serif;
 }
 
 .card2 {
@@ -155,30 +155,6 @@
     display: none;
 }
 
-.t90 {
-    width: 90%;
-}
-
-.t80 {
-    width: 80%;
-}
-
-.t70 {
-    width: 70%;
-}
-
-.t60 {
-    width: 60%;
-}
-
-.t50 {
-    width: 50%;
-}
-
-.t30 {
-    width: 30%;
-}
-
 .right {
     right: 0px;
     float: right;
@@ -187,4 +163,37 @@
 #closebtn:hover {
     color: white;
     background-color: #001630;
+}
+
+@media screen and (max-width: 900px) {
+    .parallax-container {
+        display: none!important;
+    }
+    .lowercontent {
+        position: absolute;
+        top: 0vh;
+        width: 100%;
+        background-color: #010f21;
+    }
+    .spaced {
+        padding-top: 50px;
+    }
+    .card ul li {
+        padding: 10px;
+    }
+    #bodycontainer {
+        padding: 10px;
+        border-radius: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .card ul li:hover {
+        background-color: #001630;
+    }
+    .card ul li:hover .flavor {
+        display: none;
+    }
+    .card ul li:hover .head {
+        display: block;
+    }
 }

@@ -219,7 +219,6 @@
             }, 1000);
             return false;
         });
-
         $(window).scroll(function() {
             if ($(window).scrollTop() >= $('#header').offset().top) {
                 $('.desktop-header').addClass('headerfixed');
@@ -229,6 +228,19 @@
                 $('#body').removeClass('spaced');
             }
         });
+
+        (function($) {
+            var $window = $(window),
+                $html = $('html');
+
+            $window.resize(function resize() {
+                if ($window.width() < 514) {
+                    return $html.addClass('mobile');
+                }
+
+                $html.removeClass('mobile');
+            }).trigger('resize');
+        })(jQuery);
     </script>
     <script type="text/javascript" src="js/loader.js"></script>
     <script src="js/parallax.js"></script>
