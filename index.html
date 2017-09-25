@@ -22,6 +22,55 @@
     <script src="js/smooth.js"></script>
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
+    <script type="text/javascript">
+        //Counting pageviews with keen.io is easy ! Just don't copy my project id and write key xD
+        ! function(name, path, ctx) {
+            var latest, prev = name !== 'Keen' && window.Keen ? window.Keen : false;
+            ctx[name] = ctx[name] || {
+                ready: function(fn) {
+                    var h = document.getElementsByTagName('head')[0],
+                        s = document.createElement('script'),
+                        w = window,
+                        loaded;
+                    s.onload = s.onerror = s.onreadystatechange = function() {
+                        if ((s.readyState && !(/^c|loade/.test(s.readyState))) || loaded) {
+                            return
+                        }
+                        s.onload = s.onreadystatechange = null;
+                        loaded = 1;
+                        latest = w.Keen;
+                        if (prev) {
+                            w.Keen = prev
+                        } else {
+                            try {
+                                delete w.Keen
+                            } catch (e) {
+                                w.Keen = void 0
+                            }
+                        }
+                        ctx[name] = latest;
+                        ctx[name].ready(fn)
+                    };
+                    s.async = 1;
+                    s.src = path;
+                    h.parentNode.insertBefore(s, h)
+                }
+            }
+        }('KeenAsync', 'https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.1.3.min.js', this);
+
+        KeenAsync.ready(function() {
+            // Configure a client instance
+            var client = new KeenAsync({
+                projectId: '59c6251dc9e77c00015e7a27',
+                writeKey: '72F10357225C12E51258D593A87835DCC3939969F873D659744FEE83427FC7E2A65685A45A0523955D209536F26D404F84E56DC8B8F87A914BE69C24143031A6741496AD90B35522F99DCAA6EFBAAA493284BDCEC08254F610D6DC62780F7B9B'
+            });
+
+            // Record an event
+            client.recordEvent('pageviews', {
+                title: document.title
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -64,11 +113,25 @@
                                 <div class="cardheader">I am interested in</div>
                                 <div class="languages">
                                     <ul class="languageslist">
-                                        <li><span class="head">Competitive programming</span>
-                                            <span class="flavor">I have been doing this for a while</span></li>
-                                        <li>Website design</li>
-                                        <li>Web application development</li>
-                                        <li>Android application developement</li>
+                                        <li>
+                                            <span class="head">Competitive programming</span>
+                                            <span class="flavor">
+                                                I have been doing this for a while. I am primarily active on Codechef. <a href = "https://www.codechef.com/users/my_name_is_nrg" target="_blank">Check out my profile !</a>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="head">Website design</span>
+                                            <span class="flavor">I am not really proud of my designing skills , but yeah I can do a bit of web design. Take this webpage for example. I love dark colors and flat design.</span>
+                                        </li>
+                                        <li>
+                                            <span class="head"> Web application development</span>
+                                            <span class="flavor">I work mainly using JAVA spring , but I know a little bit of django and nodejs too. </span>
+                                        </li>
+
+                                        <li>
+                                            <span class="head">Android application developement</span>
+                                            <span class="flavor">JAVA being my primary language , android app development is easy for me. It is something I do as a hobby. For my personal hobby projects I use firebase and GCP as backend. </span>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -80,13 +143,27 @@
                                 <div class="cardheader">Programming languages I work with</div>
                                 <div class="languages" id="list1">
                                     <ul class="languageslist">
-                                        <li>JAVA : Proficient</li>
-                                        <li>C : Intermediate </li>
-                                        <li>C++ : Basic knowledge</li>
-                                        <li>Python : Beginner</li>
-                                        <li>HTML : Intermediate</li>
-                                        <li>CSS : Intermediate</li>
-                                        <li>JavaScript : Intermediate</li>
+                                        <li><span class="head">JAVA : Proficient</span>
+                                            <span class="flavor">I have been programming in JAVA since I was 13. I know in details about most of the features JAVA has to offer , including memory management and optimization.</span>
+                                        </li>
+                                        <li><span class="head">C : Intermediate </span>
+                                            <span class="flavor">I know the syntax and can convert logic into code without hassle.</span>
+                                        </li>
+                                        <li><span class="head">C++ : Basic knowledge</span>
+                                            <span class="flavor">I know the syntax and can convert logic into code without much hassle.</span>
+                                        </li>
+                                        <li><span class="head">Python : Beginner</span>
+                                            <span class="flavor">I know the most basic syntax , and can make stuff using python after considerable amounts of googleing. <a href="https://github.com/AnubrataDS/cobrabot" target="_blank">Check out this little project.</a> 
+                                        </li>
+                                        <li><span class="head">HTML : Intermediate</span>
+                                            <span class="flavor">I can make basic webpages and stuff using html</span>
+                                        </li>
+                                        <li><span class="head">CSS : Intermediate</span>
+                                            <span class="flavor">I know the basic syntax and also a few cool tricks</span>
+                                        </li>
+                                        <li><span class="head">JavaScript : Intermediate</span>
+                                            <span class="flavor">I use javascript mainly to supplement CSS , using JQuery and processing.js . I also know the very basics of node.js , but have very little experience</span>
+                                        </li>
 
                                     </ul>
                                 </div>
