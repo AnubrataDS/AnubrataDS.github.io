@@ -1,88 +1,77 @@
-
-
-var sketch = function(p) {
-var particles_a = [];
-var particles_b = [];
-var particles_c = [];
-var scale;
-var rows ;
-var cols ;
-var nums ;
-var noiseScale;
-var speed = 0.2;
-
-
-p.setup = function(){
-    console.log('HELLO');
-	p.createCanvas(p.windowWidth, p.windowHeight);
-	scale = 70 ;
-	rows = (p.windowHeight/scale);
-	cols = (p.windowWidth/scale) ;
-	noiseScale = 900;
-	nums = rows*cols;
-	console.log(rows);
-	
-	p.noStroke();
-	p.smooth();
-	
-	p.background(2, 8, 38);
-	for(var i = 0; i < nums; i++){
-		particles_a[i] = new Particle(p.random(0, p.width),p.random(0,p.height));
-		particles_b[i] = new Particle(p.random(0, p.width),p.random(0,p.height));
-		particles_c[i] = new Particle(p.random(0, p.width),p.random(0,p.height));
+var canvas, context;
+var width, height;
+var timeStart = new Date().getTime();
+var time = 0;
+//shimmy
+window.requestAnimFrame = (function () {
+    return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (callback, element) {
+            window.setTimeout(callback, 1000 / 60);
+        };
+})();
+//setup globals
+noise.seed(Math.random());
+var noiseScale = 1000, particleSpeed = 0.3;
+var particles = [];
+var numParticles = 200;
+var colors = ['rgba(255,0,93, 1)', 'rgba(125,0,255, 1)', 'rgba(2, 27, 137,1)'];
+function init() {
+    canvas = document.createElement('canvas');
+    width = document.getElementById("sketch-holder").offsetWidth;
+    height = document.getElementById("sketch-holder").scrollHeight;
+    //width = 400;
+    //height = 400;
+    canvas.width = width;
+    canvas.height = height;
+    context = canvas.getContext('2d');
+    context.strokeStyle = 'rgba(0,0,0,0)';
+    document.getElementById("sketch-holder").appendChild(canvas);
+    for (var i = 0; i < numParticles; i++) {
+        particles.push(new particle);
     }
 }
 
-p.draw = function(){
-	p.fill(2,8,38);
-    p.rect(0,0,p.width,p.height);
-		for(var i = 0; i < nums; i++){
-		var radius = p.map(i,0,nums,1,3);
-		var alpha = p.map(i,0,nums,100,255);
-
-		p.fill(255, 0, 93,particles_a[i].alpha);
-		particles_a[i].move();
-		particles_a[i].display(radius);
-
-		p.fill(125, 0, 255 ,particles_b[i].alpha);
-		particles_b[i].move();
-		particles_b[i].display(radius);
-
-		p.fill(2, 27, 137,particles_c[i].alpha);
-		particles_c[i].move();
-		particles_c[i].display(radius);
-		}
+function animate() {
+    requestAnimFrame(animate);
+    draw();
 }
-function Particle(x, y){
-	this.dir = p.createVector(0, 0);
-	this.vel = p.createVector(0, 0);
-	this.pos = p.createVector(x, y);
-	this.alpha = 255;
 
-	this.move = function(){
-		var angle = p.noise(this.pos.x/noiseScale, this.pos.y/noiseScale)*p.TWO_PI*noiseScale;
-		this.dir.x = p.cos(angle);
-		this.dir.y = p.sin(angle);
-		this.vel = this.dir.copy();
-		this.vel.mult(speed);
-		this.pos.add(this.vel);
-		this.alpha = p.map(this.vel.mag(),0,speed,100,255);
-		this.checkEdge();
-	}
-
-	this.checkEdge = function(){
-		if((this.pos.x > p.width)||(this.pos.x < 0)||(this.pos.y > p.height)||(this.pos.y < 0)||(this.vel.mag() <0.1)){
-			this.pos.x = p.random(0, p.width);
-			this.pos.y = p.random(0, p.height)
-			this.dir = p.createVector(0, 0);
-			this.vel = p.createVector(0, 0);
-			this.pos = p.createVector(this.pos.x, this.pos.y);
-		}
-	}
-
-	this.display = function(r){
-		p.ellipse(this.pos.x, this.pos.y, r,r);
-	}
+function particle() {
+    this.x = Math.random() * width;
+    this.y = Math.random() * height;
+    this.r = Math.random() * 1.5;
+    this.color = colors[Math.floor(Math.random() * colors.length)];
+    this.ttl = Math.random()*2000 ;
+    this.display = function () {
+        angle = noise.perlin2(this.x / noiseScale, this.y / noiseScale) * noiseScale * Math.PI * 2;
+        this.x += Math.cos(angle) * particleSpeed;
+        this.y += Math.sin(angle) * particleSpeed;
+        this.ttl-- ;
+        if (this.x > width || this.x < 0 || this.y > height || this.y < 0 || this.ttl<=0) {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.r = Math.random() * 1.5;
+            this.ttl = Math.random()*2000 ;
+            this.color = colors[Math.floor(Math.random() * colors.length)];
+        }
+        context.fillStyle = this.color;
+        context.beginPath();
+        context.arc(this.x, this.y, this.r, 0, Math.PI * 2, true);
+        context.closePath();
+        context.fill();
+    }
 }
+
+function draw() {
+    context.fillStyle = "#020826";
+    context.fillRect(0, 0, width, height);
+    for (var i = 0; i < numParticles; i++) {
+        particles[i].display();
+    }
 }
-new p5(sketch, 'sketch-holder');
+init();
+animate();
