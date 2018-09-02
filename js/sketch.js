@@ -15,7 +15,7 @@ window.requestAnimFrame = (function () {
 })();
 //setup globals
 noise.seed(Math.random());
-var noiseScale = 1000, particleSpeed = 0.3;
+var noiseScale = 1000, particleSpeed = 0.2;
 var particles = [];
 var numParticles = 200;
 var colors = ['rgba(255,0,93, 1)', 'rgba(125,0,255, 1)', 'rgba(2, 27, 137,1)'];
@@ -67,7 +67,7 @@ function particle() {
 }
 
 function draw() {
-    context.fillStyle = "rgba(2,8,38, 0.05)";
+    context.fillStyle = "rgba(1,15,33, 0.1)";
     context.fillRect(0, 0, width, height);
     for (var i = 0; i < numParticles; i++) {
         particles[i].display();
