@@ -42,7 +42,7 @@ function animate() {
 
 function particle() {
     this.x = Math.random() * width;
-    this.y = Math.random() * height;
+    this.y = Math.random() * height/2;
     this.r = Math.random() * 1.5;
     this.color = colors[Math.floor(Math.random() * colors.length)];
     this.ttl = Math.random()*2000 ;
@@ -51,9 +51,9 @@ function particle() {
         this.x += Math.cos(angle) * particleSpeed;
         this.y += Math.sin(angle) * particleSpeed;
         this.ttl-- ;
-        if (this.x > width || this.x < 0 || this.y > height || this.y < 0 || this.ttl<=0) {
+        if (this.x > width || this.x < 0 || this.y > height/2 || this.y < 0 || this.ttl<=0) {
             this.x = Math.random() * width;
-            this.y = Math.random() * height;
+            this.y = Math.random() * height/2;
             this.r = Math.random() * 1.5;
             this.ttl = Math.random()*2000 ;
             this.color = colors[Math.floor(Math.random() * colors.length)];
@@ -67,7 +67,7 @@ function particle() {
 }
 
 function draw() {
-    context.fillStyle = "#020826";
+    context.fillStyle = "rgba(2,8,38, 0.05)";
     context.fillRect(0, 0, width, height);
     for (var i = 0; i < numParticles; i++) {
         particles[i].display();
