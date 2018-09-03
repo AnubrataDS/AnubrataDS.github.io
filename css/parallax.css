@@ -28,25 +28,25 @@
 
 .layer-1 {
     background-image: url('../images/parallax/layer1.png');
-    background-position-y: 3vh;
+    background-position-y: 40vh;
 }
 
 .layer-2 {
     background-image: url('../images/parallax/layer2.png');
-    background-position-y: 6vh;
+    background-position-y: 50vh;
 }
 
 .layer-3 {
     background-image: url('../images/parallax/layer3.png');
-    background-position-y: 9vh;
+    background-position-y: 55vh;
 }
 
 .layer-4 {
     background-image: url('../images/parallax/layer4.png');
-    background-position-y: 12vh;
+    background-position-y: 60vh;
 }
 
 .layer-5 {
     background-image: url('../images/parallax/layer5.png');
-    background-position-y: 15vh;
+    background-position-y: 65vh;
 }

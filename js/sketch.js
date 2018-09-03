@@ -34,7 +34,7 @@ p.setup = function(){
 }
 
 p.draw = function(){
-	p.fill(2,8,38);
+	p.fill(2,8,38,3);
     p.rect(0,0,p.width,p.height);
 		for(var i = 0; i < nums; i++){
 		var radius = p.map(i,0,nums,1,3);
